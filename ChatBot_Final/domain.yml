@@ -1,0 +1,90 @@
+actions:
+- action_fill_email_body
+- action_search_restaurants
+- action_sendemail
+- action_verify_location
+- utter_ask_cuisine
+- utter_ask_id
+- utter_ask_location
+- utter_ask_price_range
+- utter_ask_proper_location
+- utter_conf_email
+- utter_email_sent
+- utter_goodbye
+- utter_greet
+entities:
+- affirm
+- cuisine
+- deny
+- email
+- greet
+- location
+- price_range
+intents:
+- restaurant_search
+- affirm
+- greet
+- deny
+- goodbye
+- email_confirmation
+responses:
+  utter_ask_cuisine:
+  - buttons:
+    - payload: Chinese
+      title: Chinese
+    - payload: Mexican
+      title: Mexican
+    - payload: Italian
+      title: Italian
+    - payload: American
+      title: American
+    - payload: South Indian
+      title: South Indian
+    - payload: North Indian
+      title: North Indian
+    text: What kind of cuisine would you like?
+  utter_ask_id:
+  - text: Please enter Email ID.
+  utter_ask_location:
+  - text: In what location?
+  utter_ask_price_range:
+  - buttons:
+    - payload: Low
+      title: Lesser than Rs.300
+    - payload: Medium
+      title: Rs.300 to Rs.700
+    - payload: High
+      title: More than Rs.700
+    text: Please choose the price range.
+  utter_ask_proper_location:
+  - text: Please enter a valid location.
+  utter_conf_email:
+  - text: Should I send the details to your email ID?
+  utter_default:
+  - text: Sorry, I did not understand. Can you please rephrase?
+  utter_email_sent:
+  - text: Email Sent.
+  utter_goodbye:
+  - text: Bye-Bye
+  - text: Goodbye
+  - text: Take Care
+  - text: Happy to help you
+  utter_greet:
+  - text: Hi, I am a restaurant bot, how can I help you?
+  - text: Hello there, how are you doing? I am a restaurant bot, how can I help you
+      today?
+  - text: Hi, I am a restaurant bot, what can I do for you?
+session_config:
+  carry_over_slots_to_new_session: true
+  session_expiration_time: 0
+slots:
+  cuisine:
+    type: text
+  email:
+    type: text
+  emailbody:
+    type: text
+  location:
+    type: text
+  price_range:
+    type: text
